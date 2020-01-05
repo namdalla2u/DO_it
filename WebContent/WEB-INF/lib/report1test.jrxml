@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="report1test" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20"
+              rightMargin="20" topMargin="20" bottomMargin="20" uuid="95db5138-3e0f-41ed-b444-99d6517113d6">
+    <property name="ireport.zoom" value="1.0"/>
+    <property name="ireport.x" value="0"/>
+    <property name="ireport.y" value="0"/>
+    <queryString language="SQL">
+        <![CDATA[select * from emplogin]]>
+    </queryString>
+    <field name="EMPNO" class="java.lang.String"/>
+    <field name="PW" class="java.lang.String"/>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="39" splitType="Stretch">
+            <staticText>
+                <reportElement x="238" y="0" width="87" height="39" uuid="b591f866-864a-49a8-af52-4b0b34f1bf26"/>
+                <textElement>
+                    <font size="15"/>
+                </textElement>
+                <text><![CDATA[박영희 천재]]></text>
+            </staticText>
+            <line>
+                <reportElement x="225" y="21" width="100" height="1" uuid="9d6aac36-c9cc-41c6-ad3b-eaa399d21958"/>
+            </line>
+        </band>
+    </title>
+    <pageHeader>
+        <band height="45" splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band height="61" splitType="Stretch">
+            <staticText>
+                <reportElement x="368" y="2" width="100" height="20" uuid="033d7d97-6805-4cfb-86d3-a909102e7f92"/>
+                <text><![CDATA[PW]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="143" splitType="Stretch">
+            <textField>
+                <reportElement x="46" y="37" width="100" height="20" uuid="5e0ee6e5-74a0-4c16-b529-4aa6f61c6b7b"/>
+                <textFieldExpression><![CDATA[$F{EMPNO}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="368" y="37" width="100" height="20" uuid="72dff818-24d9-470d-98aa-910e2f0857a1"/>
+                <textFieldExpression><![CDATA[$F{PW}]]></textFieldExpression>
+            </textField>
+            <rectangle>
+                <reportElement x="176" y="17" width="173" height="88" uuid="ea8429e8-06db-48ec-b369-1ed821187e7e"/>
+            </rectangle>
+            <staticText>
+                <reportElement x="176" y="17" width="100" height="20" uuid="8d3934bb-af8b-4b0a-8dba-dc3e29140457"/>
+                <text><![CDATA[EMPNO]]></text>
+            </staticText>
+        </band>
+    </detail>
+    <columnFooter>
+        <band height="45" splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band height="47" splitType="Stretch">
+            <textField evaluationTime="Report">
+                <reportElement x="225" y="15" width="100" height="20" uuid="367bf20c-405e-4d59-8660-e9e6c915b1ef"/>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+    <summary>
+        <band height="43" splitType="Stretch"/>
+    </summary>
+</jasperReport>

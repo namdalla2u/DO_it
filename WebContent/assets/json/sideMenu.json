@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "icon": "ti-dashboard",
+      "name": "기본 설정",
+      "items": [
+        {
+          "name": "회사 등록",
+          "href": "manager/company"
+        },
+        {
+          "name": "사원 관리",
+          "href": "manager/employee"
+        },
+        {
+          "name": "거래처 등록",
+          "href": "manager/customer"
+        },
+        {
+          "name": "계정과목 및 적요",
+          "href": "manager/account"
+        }
+      ]
+    },
+    {
+      "icon": "ti-layout-sidebar-left",
+      "name": "장부 관리",
+      "items": [
+        {
+          "name": "거래처원장",
+          "href": "ledgeManage/clientLedger"
+        },
+        {
+          "name": "계정별원장",
+          "href": "ledgeManage/accountLedger"
+        },
+        {
+          "name": "현금출납장",
+          "href": "ledgeManage/cashLedger"
+        },
+        {
+          "name": "매입매출장",
+          "href": "ledgeManage/vatLedger"
+        },
+        {
+          "name": "일(월)계표",
+          "href": "ledgeManage/dayBalance"
+        },
+        {
+          "name": "분개장",
+          "href": "ledgeManage/jounalLedger"
+        }
+      ]
+    }
+  ]
+}
