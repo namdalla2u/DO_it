@@ -25,37 +25,27 @@
 	
     <script>
         $(document).ready(function(){
-			   $.ajax({
-				   type: "GET",
-                   url: "${pageContext.request.contextPath}/hr/hr.do",
-                   data: {
-                       "method": "findEmployee",
+        	  $("#profileGrid").jqGrid({
+        		   url:"${pageContext.request.contextPath}/hr/hr.do",
+        		   mtype: "post",
+        		   postData: {
+        			   "method": "findEmployee",
                        "empCode": "${empCode}"
                    },
-                   dataType: "json",
-                   success: function(obj){
-//                     console.log(obj);
-                    var employeeInfo=obj.employeeInfo;
-                  
-						showGrid(employeeInfo);
-				
-                   }
-               });
-		
+        		   datatype:"json",
+//         		   jsonReader:{root:"employeeInfo"},
+        		   colModel: [
+                       {name: "empCode", label: "사원번호", type: "text", key: true},
+                       {name: "empName", label: "성명", type: "text"},
+                       {name: "deptCode", label: "부서코드", type: "text"},
+                       {name: "gender", label: "성별", type: "text"},
+                       {name: "birthDate", label: "생년월일", type: "number"},
+                       {name: "positionCode", label: "직급", type: "text"},
+                       {name: "status", label: "상태", type: "text"}
+                   ]
         });
-        function showGrid(employeeInfo){
-        	  console.log(employeeInfo);
-        	$("#profileGrid").jqGrid({
-                colModel: [
-                    {name: "employeeInfo.empCode", label: "사원번호", type: "text", key: true},
-                    {name: "employeeInfo.empName", label: "성명", type: "text"},
-                    {name: "employeeInfo.deptCode", label: "부서코드", type: "text"},
-                    {name: "employeeInfo.gender", label: "성별", type: "text"},
-                    {name: "employeeInfo.birthDate", label: "생년월일", type: "number"},
-                    {name: "employeeInfo.positionCode", label: "직급", type: "text"},
-                    {name: "employeeInfo.status", label: "상태", type: "text"}
-                ]
-        });}
+        });
+        
     </script>
 </head>
 <body>
