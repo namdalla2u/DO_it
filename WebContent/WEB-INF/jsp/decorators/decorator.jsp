@@ -111,6 +111,7 @@
                                     <span>기본 설정</span>
                                 </a>
                                 <ul class="collapse">
+                                <li><a href="${pageContext.request.contextPath}/hr/MyprofileForm.html">내 프로필</a></li>
                                 <li><a href="${pageContext.request.contextPath}/hr/employeeForm.html">사원 관리</a></li>
                                     <li><a href="${pageContext.request.contextPath}/company/WorkplaceInserForm.html">회사 등록</a></li>
                                     <li><a href="${pageContext.request.contextPath}/company/WorkplaceManagement.html">거래처 관리</a></li>
@@ -167,7 +168,7 @@
                 </div>
             </div>
         </div>     
-         <div  style="margin-left:70%;">사원코드 : ${empCode}&nbsp 사원명 : ${empName}님&nbsp  
+         <div  style="margin-left:70%;">사원코드 : ${empCode}&nbsp 사원명 : <a href="${pageContext.request.contextPath}/hr/MyprofileForm.html">${empName}</a>님&nbsp  
         <a href="${pageContext.request.contextPath}/logout.do" aria-expanded="true">
            <button class="ti-hand-stop">로그아웃</button>
         </a><br>

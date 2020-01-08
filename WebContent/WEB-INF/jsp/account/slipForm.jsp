@@ -34,7 +34,7 @@
         var REQUIRE_ACCEPT_SLIP = "미승인";
 
         // 그리드의 선택자
-        var slipGrid = "#slipGrid";
+        var slipGrid = "#sli`pGrid";
         var journalGrid = "#journalGrid";
         var journalDetailGrid;
         var accountGrid = "#accountGrid";
@@ -639,7 +639,7 @@
                     slipStatus: REQUIRE_ACCEPT_SLIP,
                     deptCode: deptCode, 
                     reportingEmpCode: empCode,
-                    reportingEmpName: empName,
+                    reportingEmpName: empName,        
                     reportingDate: today,
                     status: false
                 }, "first");

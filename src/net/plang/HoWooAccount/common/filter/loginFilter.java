@@ -12,13 +12,15 @@ public class loginFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+    	/*FilterConfig의 메서드 getServletContext()의 리턴타입 ServletContext
+    	 * 변수 contextPath는 프로젝트 경로(/HoWooAccount)만 담겨있다. 
+    	 * */
         String contextPath = filterConfig.getServletContext().getContextPath();
-
 //        excludePathList = filterConfig.getInitParameter("excludeLoginFilter");
-        loginPage = filterConfig.getInitParameter("loginPage");
+        loginPage = filterConfig.getInitParameter("loginPage"); //  /loginForm.html
         loginPage = loginPage.startsWith("/") ? contextPath + loginPage : contextPath + "/" + loginPage;
 
-        movePage = filterConfig.getInitParameter("movePage");
+        movePage = filterConfig.getInitParameter("movePage"); // /hello.html
         movePage = movePage.startsWith("/") ? contextPath + movePage : contextPath + "/" + movePage;
     }
 
@@ -34,7 +36,7 @@ public class loginFilter implements Filter {
         if (request.getRequestURI().equals("/") || request.getRequestURI().endsWith(".html")) {
             System.out.println("로그인 필터 Start");
 
-            boolean isLoginPage = request.getRequestURI().equals(loginPage);
+            boolean isLoginPage = request.getRequestURI().equals(loginPage);  //사용자가 요청한 URI가 /loginForm.html로 끝나면 true반환 
             System.out.println("RequestURI : " + request.getRequestURI());
             System.out.println("loginPage : " + loginPage);
 
@@ -63,7 +65,7 @@ public class loginFilter implements Filter {
     }
     
     private boolean excludeUrl(HttpServletRequest request) {
-        String uri = request.getRequestURI().toString().trim();
+        String uri = request.getRequestURI().toString().trim(); //  request.getRequestURI()는 프로젝트와 파일경로까지 가져온다. 
         if(uri.contains(request.getContextPath()+"/hr/empinsertForm.html")){
             return true;
         }else{

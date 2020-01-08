@@ -18,14 +18,15 @@ public class ApplicationContext {
     public ApplicationContext(ServletConfig config, ServletContext application) {
         System.out.println("		@ ApplicationContext접근");
         map = new HashMap<String, Object>();
-        String path = config.getInitParameter("configFile");
+        String path = config.getInitParameter("configFile"); //web.xml에 입력된  /initparam/configFile의 value
 
         System.out.println("		@ web.xml에서 입력된 configFile:" + path);
 
-        String rPath = application.getRealPath(path);
+        String rPath = application.getRealPath(path); //절대경로를 읽어옴. 
+//        System.out.println("rPath:"+rPath);
         Properties properties = new Properties();
         try {
-            properties.load(new FileReader(rPath));
+            properties.load(new FileReader(rPath)); //프로퍼티파일 로드
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
