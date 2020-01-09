@@ -33,7 +33,7 @@
                        "empCode": "${empCode}"
                    },
         		   datatype:"json",
-//         		   jsonReader:{root:"employeeInfo"},
+         		   jsonReader:{root:"employeeInfo"},
         		   colModel: [
                        {name: "empCode", label: "사원번호", type: "text", key: true},
                        {name: "empName", label: "성명", type: "text"},
@@ -52,3 +52,4 @@
     <div id="ProfileTag"><table id="profileGrid"></table></div>
 </body>
 </html>
+

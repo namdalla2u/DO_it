@@ -1,8 +1,10 @@
 package net.plang.HoWooAccount.hr.controller;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -68,8 +70,12 @@ public class HRController extends MultiActionController {
         try {
             String empCode = request.getParameter("empCode");
             System.out.println("		@ 사원 코드 : " + empCode);
-            EmployeeBean employeeBean = hrServiceFacade.findEmployee(empCode);
+            EmployeeBean employeeBean1 = hrServiceFacade.findEmployee(empCode);
             out = response.getWriter();
+            List<EmployeeBean> employeeBean = new ArrayList<>();
+            
+            employeeBean.add(employeeBean1);
+            
             json.put("employeeInfo", employeeBean);
             json.put("errorCode", 1);
             json.put("errorMsg", "성공");
