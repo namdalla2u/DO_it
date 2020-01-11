@@ -70,11 +70,8 @@ public class HRController extends MultiActionController {
         try {
             String empCode = request.getParameter("empCode");
             System.out.println("		@ 사원 코드 : " + empCode);
-            EmployeeBean employeeBean1 = hrServiceFacade.findEmployee(empCode);
+            EmployeeBean employeeBean = hrServiceFacade.findEmployee(empCode);
             out = response.getWriter();
-            List<EmployeeBean> employeeBean = new ArrayList<>();
-            
-            employeeBean.add(employeeBean1);
             
             json.put("employeeInfo", employeeBean);
             json.put("errorCode", 1);

@@ -85,13 +85,16 @@
                 var employeeInfo = {};
 
                 var inputForm = $("#employeeEditModal .modal-body input[id]");
+                console.log(inputForm)
                 var profileImage = $("img#profileImage").attr("src");
                 $.each(inputForm, function (index, obj) {
+                	
                     employeeInfo[obj.id] = $("input#" + obj.id).val();
+                    console.log(employeeInfo[obj.id]);
                 });
 
                 var jsonString = JSON.stringify(employeeInfo);
-
+				console.log(jsonString);
                 $.ajax({
                     url: "${pageContext.request.contextPath}/hr/hr.do",
                     type: "post",
@@ -217,7 +220,7 @@
                 dataType: "json",
                 success: function (jsonObj) {
                     // set the new data
-                    console.log(jsonObj.detailCodeList);
+//                     console.log(jsonObj.detailCodeList);
                     $(deptListGrid).jqGrid('setGridParam', {data: jsonObj.detailCodeList});
                     // hide the show message
                     $(deptListGrid)[0].grid.endReq();

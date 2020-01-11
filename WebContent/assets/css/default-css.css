@@ -435,6 +435,7 @@ img {
 	animation: popin 1.5s linear infinite 0s;
 }
 
+
 .loader:after {
 	content: '';
 	position: absolute;
